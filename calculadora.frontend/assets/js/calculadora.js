@@ -202,11 +202,11 @@ $(document).ready(function () {
             }else if(operador=='/'){
                 if(num2==0){
                     $('.resultado').empty();
-                    $('.resultado').append('Error al dividir por cero');
+                    $('.resultado').append('Error al dividir por cero');                    
                     setTimeout(function () {
                         $('.btnc').trigger('click');
                     }, 1500);
-                }
+                }else
                 resultado=parseFloat(num1)/parseFloat(num2);
             }
             return resultado
