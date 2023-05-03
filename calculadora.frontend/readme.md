@@ -2,10 +2,9 @@ Proyecto Calculadora Básica
 
 Manual de Instruciones:
 
-La calculadora básica que hemos desarrollado, realiza  las cuatro operaciones básicas: Suma, Resta, Multiplicación y División. 
+La calculadora básica que hemos desarrollado, realiza  las cuatro operaciones básicas: Suma, Resta, Multiplicación y División, y trabaja tanto como con números enteros como decimales.
 
-Las operaciones se deben ejecutar con sólo dos operandos, y para realizar una tercera operación debe haber completado la operación previa
-
+Las operaciones se deben ejecutar con sólo dos operandos, y para realizar una tercera operación debe haber completado la operación previa.
 
 1. Suma: Digite el primer número, luego ponga el operador suma y a continuación el segundo operando, a continuación presione el signo igual.
 
@@ -20,8 +19,6 @@ Borre la pantalla con el botón "C"
 Borre la pantalla con el botón "C"
 
 4. División: Digite el primer número, luego ponga el operador multiplicación y a continuación el segundo operando, a continuación presione el signo igual.
-
-5. Las operaciones con números decimales funcionan de igual forma que con números enteros
 
 Borre la pantalla con el botón "C"
 
