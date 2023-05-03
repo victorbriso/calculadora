@@ -165,7 +165,7 @@ $(document).ready(function () {
     });
     $( ".btnDot" ).on( "click", function() {
         if(coma){
-            var valor=',';
+            var valor='.';
             $('.historial').append(valor);
             coma = false;
             agregaNumeros(valor)
