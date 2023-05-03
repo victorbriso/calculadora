@@ -1,5 +1,11 @@
 Proyecto Calculadora Básica
 
+Integrantes:
+Bastian Mariangel
+Victor Briso
+Alan Vera
+Enrique Bahamonde
+
 Manual de Instruciones:
 
 La calculadora básica que hemos desarrollado, realiza  las cuatro operaciones básicas: Suma, Resta, Multiplicación y División, y trabaja tanto como con números enteros como decimales.
