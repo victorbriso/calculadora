@@ -5,9 +5,7 @@ $(document).ready(function () {
     var control = true;
     var numero1 = 0;
     var numero2 = 0;
-    $( ".btnc" ).on( "load", function() {
-        $('.btnc').trigger('click');
-      } );
+    
     $( ".btn0" ).on( "click", function() {
         var valor=$(".btn0").val();
         $('.historial').append(valor);
@@ -242,4 +240,5 @@ $(document).ready(function () {
         }
         return
     }
+        $('.btnc').trigger('click');
 });
