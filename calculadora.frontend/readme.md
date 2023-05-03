@@ -19,6 +19,8 @@ Borre la pantalla con el botón "C"
 
 4. División: Digite el primer número, luego ponga el operador multiplicación y a continuación el segundo operando, a continuación presione el signo igual.
 
+5. Las operaciones con números decimales funcionan de igual forma que con números enteros
+
 Borre la pantalla con el botón "C"
 
 
