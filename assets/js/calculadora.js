@@ -161,6 +161,7 @@ $(document).ready(function () {
     });
     $( ".btnDot" ).on( "click", function() {
         var valor=$(".btnDot").val();
+        
         $('.historial').append(valor);
     });
     $( ".btnc" ).on( "click", function() {
