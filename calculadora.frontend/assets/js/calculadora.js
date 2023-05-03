@@ -1,10 +1,13 @@
 $(document).ready(function () {
-    //$('.btnc').trigger('click');
+    
     var operador = ''; 
     var coma = true;
     var control = true;
     var numero1 = 0;
     var numero2 = 0;
+    $( ".btnc" ).on( "load", function() {
+        $('.btnc').trigger('click');
+      } );
     $( ".btn0" ).on( "click", function() {
         var valor=$(".btn0").val();
         $('.historial').append(valor);
@@ -187,7 +190,7 @@ $(document).ready(function () {
         $('.btnSum').attr('disabled', false);
     });
     $( ".btnIgual" ).on( "click", function() {
-        var resultadoOperacion = generaResultado(operador, numero1, numero2);
+        var resultadoOperacion = parseFloat(generaResultado(operador, numero1, numero2).toFixed(2));
         $('.btnDiv').attr('disabled', false);
         $('.btnMul').attr('disabled', false);
         $('.btnRes').attr('disabled', false);
