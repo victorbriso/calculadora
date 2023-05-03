@@ -187,13 +187,13 @@ $(document).ready(function () {
         $('.btnSum').attr('disabled', false);
     });
     $( ".btnIgual" ).on( "click", function() {
-        resultado = generaResultado(operador, numero1, numero2);
+        var resultadoOperacion = generaResultado(operador, numero1, numero2);
         $('.btnDiv').attr('disabled', false);
         $('.btnMul').attr('disabled', false);
         $('.btnRes').attr('disabled', false);
         $('.btnSum').attr('disabled', false);
         $('.resultado').empty();
-        $('.resultado').append(resultado);
+        $('.resultado').append(resultadoOperacion);
         control = true;
         coma = true;
         numero1 = 0;
@@ -206,10 +206,13 @@ $(document).ready(function () {
             num2=parseFloat(num2);
             if(operador=='+'){
                 resultado=parseFloat(num1)+parseFloat(num2);
+                return resultado
             }else if (operador=='-'){
                 resultado=parseFloat(num1)-parseFloat(num2);
+                return resultado
             }else if (operador=='*'){
                 resultado=parseFloat(num1)*parseFloat(num2);
+                return resultado
             }else if(operador=='/'){
                 if(num2==0 || num2=='0'){
                     $('.resultado').empty();
@@ -217,10 +220,12 @@ $(document).ready(function () {
                     setTimeout(function () {
                         $('.btnc').trigger('click');
                     }, 1500);
-                }else
-                resultado=parseFloat(num1)/parseFloat(num2);
-            }
-            return resultado
+                    return;
+                }else{
+                    resultado=parseFloat(num1)/parseFloat(num2);
+                    return resultado
+                }
+            }            
         }else{
             $('.resultado').append('Error inesperado');
         }
