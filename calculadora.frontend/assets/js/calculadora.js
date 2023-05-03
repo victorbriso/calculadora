@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //$('.btnc').trigger('click');
     var operador = ''; 
     var coma = true;
     var control = true;
