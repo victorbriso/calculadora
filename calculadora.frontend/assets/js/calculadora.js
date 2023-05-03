@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var operador = ''; 
-    var coma = false;
+    var coma = true;
     var control = true;
     var numero1 = 0;
     var numero2 = 0;
@@ -56,6 +56,7 @@ $(document).ready(function () {
     });
     $( ".btnDiv" ).on( "click", function() {
         control = false;
+        coma = true;
         var valor=$(".btnDiv").val();
         $('.btnDiv').attr('disabled', true);
         $('.btnMul').attr('disabled', false);
@@ -83,6 +84,7 @@ $(document).ready(function () {
     });
     $( ".btnMul" ).on( "click", function() {
         var valor=$(".btnMul").val();
+        coma = true;
         control = false;
         $('.btnDiv').attr('disabled', false);
         $('.btnMul').attr('disabled', true);
@@ -109,6 +111,7 @@ $(document).ready(function () {
     });
     $( ".btnRes" ).on( "click", function() {
         var valor=$(".btnRes").val();
+        coma = true;
         control = false;
         $('.btnDiv').attr('disabled', false);
         $('.btnMul').attr('disabled', false);
@@ -135,6 +138,7 @@ $(document).ready(function () {
     });
     $( ".btnSum" ).on( "click", function() {
         var valor=$(".btnSum").val();
+        coma = true;
         control = false;
         $('.btnDiv').attr('disabled', false);
         $('.btnMul').attr('disabled', false);
@@ -160,14 +164,19 @@ $(document).ready(function () {
         }
     });
     $( ".btnDot" ).on( "click", function() {
-        var valor=$(".btnDot").val();
-        $('.historial').append(valor);
+        if(coma){
+            var valor='.';
+            $('.historial').append(valor);
+            coma = false;
+            agregaNumeros(valor)
+        }
+        
     });
     $( ".btnc" ).on( "click", function() {
         $('.resultado').empty();
         $('.historial').empty();
         control = true;
-        coma = false;
+        coma = true;
         numero1=0;
         numero2=0;
         operador = '';
@@ -177,7 +186,6 @@ $(document).ready(function () {
         $('.btnSum').attr('disabled', false);
     });
     $( ".btnIgual" ).on( "click", function() {
-        console.log(operador, numero1, numero2);
         resultado = generaResultado(operador, numero1, numero2);
         $('.btnDiv').attr('disabled', false);
         $('.btnMul').attr('disabled', false);
@@ -191,8 +199,8 @@ $(document).ready(function () {
     });
     function generaResultado(operador=null, num1=null, num2=null){
         if(operador!=null&&num1!=null&&num2!=null){
-            num1=Number(num1);
-            num2=Number(num2);
+            num1=parseFloat(num1);
+            num2=parseFloat(num2);
             if(operador=='+'){
                 resultado=parseFloat(num1)+parseFloat(num2);
             }else if (operador=='-'){
@@ -200,13 +208,13 @@ $(document).ready(function () {
             }else if (operador=='*'){
                 resultado=parseFloat(num1)*parseFloat(num2);
             }else if(operador=='/'){
-                if(num2==0){
+                if(num2==0 || num2=='0'){
                     $('.resultado').empty();
-                    $('.resultado').append('Error al dividir por cero');
+                    $('.resultado').append('Error al dividir por cero');                    
                     setTimeout(function () {
                         $('.btnc').trigger('click');
                     }, 1500);
-                }
+                }else
                 resultado=parseFloat(num1)/parseFloat(num2);
             }
             return resultado
