@@ -194,6 +194,8 @@ $(document).ready(function () {
         $('.btnSum').attr('disabled', false);
         $('.resultado').empty();
         $('.resultado').append(resultado);
+        control = true;
+        coma = true;
         numero1 = 0;
         numero2 = 0;
         operador = '';
