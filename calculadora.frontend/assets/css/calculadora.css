@@ -17,3 +17,6 @@
 .card-body, .card-header{
     border: 10px outset #000;
 }
+.calculadora{
+    min-width: 400px;
+}
